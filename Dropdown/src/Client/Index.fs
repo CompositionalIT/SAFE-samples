@@ -7,11 +7,14 @@ type Model = { DropDownOptions: Todo list; SelectedOption: string }
 
 type Msg =
     | SetDropDownOption of id: string
+
 let dropDownOptions =
     [ { Id = 1; Description = "Clean desk" }
       { Id = 2; Description = "Take out trash" }
       { Id = 3; Description = "Walk the dog" }
       { Id = 4; Description = "Cook dinner" } ]
+
+    
 let init () : Model * Cmd<Msg> =
     let model = { DropDownOptions = dropDownOptions; SelectedOption = ""  }
     model, Cmd.none
