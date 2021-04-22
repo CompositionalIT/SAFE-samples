@@ -14,7 +14,6 @@ let dropDownOptions =
       { Id = 3; Description = "Walk the dog" }
       { Id = 4; Description = "Cook dinner" } ]
 
-    
 let init () : Model * Cmd<Msg> =
     let model = { DropDownOptions = dropDownOptions; SelectedOption = ""  }
     model, Cmd.none
@@ -28,7 +27,7 @@ open Fable.React.Props
 open Fable.React
 let view (model: Model) (dispatch: Msg -> unit) =
     Box.box' [] [
-        div [] [str (sprintf "Current selected value is: %s, since that is what the Value prop is on the select option" model.SelectedOption)]
+        div [] [str (sprintf "2 Current selected value is: %s, since that is what the Value prop is on the select option" model.SelectedOption)]
         Select.select [ ]
             [ select [ DefaultValue model.SelectedOption; OnChange (fun x  -> dispatch (SetDropDownOption x.Value)) ]
                 [ for row in model.DropDownOptions do
